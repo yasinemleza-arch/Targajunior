@@ -66,7 +66,7 @@ export default function AboutSection({ lang }: AboutProps) {
           <div className={`relative reveal ${lang === 'ar' ? 'order-2' : 'order-1'}`}>
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="https://placehold.co/700x500?text=Targa+Junior+school+building+with+colorful+facade+children+playing+in+courtyard"
+                src="/images/school-building.jpg"
                 alt="Targa Junior school building with colorful facade and children playing in courtyard"
                 className="w-full h-auto object-cover"
               />

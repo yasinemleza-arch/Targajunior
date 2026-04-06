@@ -6,6 +6,7 @@ export const translations = {
     nav: {
       home: 'Accueil',
       about: 'À Propos',
+      cycles: 'Nos Cycles',
       programs: 'Programmes',
       admission: 'Admission',
       contact: 'Contact',
@@ -191,6 +192,7 @@ export const translations = {
     nav: {
       home: 'Home',
       about: 'About',
+      cycles: 'Our Cycles',
       programs: 'Programs',
       admission: 'Admission',
       contact: 'Contact',
@@ -376,6 +378,7 @@ export const translations = {
     nav: {
       home: 'الرئيسية',
       about: 'من نحن',
+      cycles: 'مراحلنا',
       programs: 'البرامج',
       admission: 'التسجيل',
       contact: 'اتصل بنا',

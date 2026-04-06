@@ -179,7 +179,7 @@ export default function AdmissionSection({ lang }: AdmissionProps) {
             {/* Image */}
             <div className="rounded-2xl overflow-hidden shadow-md hidden lg:block">
               <img
-                src="https://placehold.co/500x300?text=Happy+students+studying+together+in+bright+modern+classroom+with+colorful+learning+materials"
+                src="/images/classroom.jpg"
                 alt="Happy students studying together in bright modern classroom with colorful learning materials"
                 className="w-full h-48 object-cover"
               />

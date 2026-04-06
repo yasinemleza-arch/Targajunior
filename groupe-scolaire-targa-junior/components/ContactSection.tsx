@@ -140,11 +140,11 @@ export default function ContactSection({ lang }: ContactProps) {
 
           {/* Map + WhatsApp CTA */}
           <div className="space-y-6 reveal delay-300">
-            {/* Map embed placeholder */}
+            {/* Map embed */}
             <div className="rounded-3xl overflow-hidden shadow-2xl border border-white/10">
               <div className="relative">
                 <img
-                  src="https://placehold.co/700x360?text=Map+showing+Targa+Junior+location+in+Targa+neighborhood+Marrakech+Morocco"
+                  src="/images/map-marrakech.jpg"
                   alt="Map showing Targa Junior location in Targa neighborhood, Marrakech, Morocco"
                   className="w-full h-56 object-cover opacity-80"
                 />

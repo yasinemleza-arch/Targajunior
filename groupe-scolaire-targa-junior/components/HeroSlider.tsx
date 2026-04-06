@@ -10,9 +10,9 @@ interface HeroSliderProps {
 }
 
 const slideImages = [
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/api-attachments/o6WHDy3lozLmg4ZgkiMOh-sQZRkKARjQ4cKC72Y2yIINUGnxemVF.jpg',
-  'https://placehold.co/1920x900?text=Students+reading+books+in+school+library+with+warm+lighting+and+bookshelves',
-  'https://placehold.co/1920x900?text=Children+doing+outdoor+science+experiment+in+school+garden+sunny+day',
+  '/images/hero-1.jpg',
+  '/images/hero-2.jpg',
+  '/images/hero-3.jpg',
 ]
 
 const slideAccents = [

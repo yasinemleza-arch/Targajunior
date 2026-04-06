@@ -29,7 +29,7 @@ export default function Navbar({ lang, setLang, activePage, setActivePage }: Nav
   const navItems = [
     { key: 'home', label: t.nav.home },
     { key: 'about', label: t.nav.about },
-    { key: 'cycles', label: (t as any).nav.cycles ?? (lang === 'fr' ? 'Nos Cycles' : lang === 'en' ? 'Our Cycles' : 'مراحلنا') },
+    { key: 'cycles', label: t.nav.cycles },
     { key: 'programs', label: t.nav.programs },
     { key: 'admission', label: t.nav.admission },
     { key: 'contact', label: t.nav.contact },

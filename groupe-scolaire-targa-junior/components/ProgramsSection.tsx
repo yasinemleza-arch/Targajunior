@@ -97,11 +97,6 @@ export default function ProgramsSection({ lang, onAdmission }: ProgramsProps) {
         <div className="mt-20 reveal">
           <div className="relative rounded-2xl overflow-hidden bg-neutral-900 p-10 md:p-16">
             <div className={`relative z-10 flex flex-col md:flex-row items-center gap-8 ${isRtl ? 'md:flex-row-reverse' : ''}`}>
-              <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/api-attachments/0wLKEzeoSj1fBaWTCmzxk-Xo3BgxZAuot9E9QOmtrbqLfYstvByk.png"
-                alt="Targa Junior Logo"
-                className="h-20 w-auto object-contain"
-              />
               <div className={`flex-1 text-center md:text-left ${isRtl ? 'md:text-right' : ''}`}>
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
                   {lang === 'fr' ? 'Ensemble pour un meilleur avenir'

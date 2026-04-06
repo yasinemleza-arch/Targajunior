@@ -69,13 +69,8 @@ export default function AboutSection({ lang }: AboutProps) {
               </div>
               {/* Floating card */}
               <div className="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-2xl p-5 border border-neutral-100 max-w-[200px]">
-                <div className="flex items-center gap-3 mb-3">
-                  <img
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/api-attachments/0wLKEzeoSj1fBaWTCmzxk-Xo3BgxZAuot9E9QOmtrbqLfYstvByk.png"
-                    alt="Targa Junior logo"
-                    className="h-10 w-auto"
-                  />
-                </div>
+                <p className="text-xs font-medium text-neutral-500 uppercase tracking-wider">Groupe Scolaire</p>
+                <p className="font-bold text-neutral-900 mb-2">Targa Junior</p>
                 <p className="text-xs text-neutral-500 leading-relaxed">
                   {lang === 'ar' ? 'مراكش، المغرب' : 'Marrakech, Maroc'}
                 </p>

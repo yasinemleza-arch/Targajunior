@@ -132,16 +132,9 @@ export default function AdmissionSection({ lang }: AdmissionProps) {
           <div className={`lg:col-span-2 space-y-6 ${isRtl ? 'order-2' : 'order-1'}`}>
             {/* Contact card */}
             <div className="reveal bg-white rounded-2xl p-6 border border-neutral-200">
-              <div className="flex items-center gap-4 mb-6">
-                <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/api-attachments/0wLKEzeoSj1fBaWTCmzxk-Xo3BgxZAuot9E9QOmtrbqLfYstvByk.png"
-                  alt="Targa Junior Logo"
-                  className="h-12 w-auto object-contain"
-                />
-                <div>
-                  <p className="text-xs font-medium text-neutral-500">Groupe Scolaire</p>
-                  <p className="font-bold text-neutral-900">Targa Junior</p>
-                </div>
+              <div className="mb-6">
+                <p className="text-xs font-medium text-neutral-500 uppercase tracking-wider">Groupe Scolaire</p>
+                <p className="text-lg font-bold text-neutral-900">Targa Junior</p>
               </div>
               <div className="h-px bg-neutral-100 mb-6" />
               <div className="space-y-4">

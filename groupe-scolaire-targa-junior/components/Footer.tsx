@@ -15,18 +15,11 @@ export default function Footer({ lang, onNav }: FooterProps) {
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-10 mb-12">
-          {/* Logo & slogan */}
+          {/* Slogan */}
           <div className={`md:col-span-2 ${isRtl ? 'text-right' : ''}`}>
-            <div className={`flex items-center gap-4 mb-4 ${isRtl ? 'flex-row-reverse justify-end' : ''}`}>
-              <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/api-attachments/0wLKEzeoSj1fBaWTCmzxk-Xo3BgxZAuot9E9QOmtrbqLfYstvByk.png"
-                alt="Targa Junior Logo"
-                className="h-12 w-auto object-contain"
-              />
-              <div>
-                <p className="text-xs font-medium text-neutral-500 uppercase tracking-widest">Groupe Scolaire</p>
-                <p className="text-lg font-bold text-white">Targa Junior</p>
-              </div>
+            <div className="mb-4">
+              <p className="text-xs font-medium text-neutral-500 uppercase tracking-widest">Groupe Scolaire</p>
+              <p className="text-xl font-bold text-white">Targa Junior</p>
             </div>
             <p className="text-neutral-500 text-sm leading-relaxed max-w-sm">
               &ldquo;{t.footer.slogan}&rdquo;

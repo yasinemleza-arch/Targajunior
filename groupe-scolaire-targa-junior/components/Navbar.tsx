@@ -52,21 +52,16 @@ export default function Navbar({ lang, setLang, activePage, setActivePage }: Nav
       dir={t.dir as 'ltr' | 'rtl'}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-8">
-        {/* Logo */}
+        {/* Logo Text */}
         <button
           onClick={() => handleNav('home')}
-          className="flex items-center gap-3 shrink-0 group"
+          className="flex items-center shrink-0 group"
         >
-          <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/api-attachments/0wLKEzeoSj1fBaWTCmzxk-Xo3BgxZAuot9E9QOmtrbqLfYstvByk.png"
-            alt="Targa Junior Logo"
-            className="h-10 w-auto object-contain transition-transform group-hover:scale-105"
-          />
-          <div className="hidden sm:block">
+          <div>
             <p className={`text-[10px] font-semibold uppercase tracking-widest transition-colors ${scrolled ? 'text-neutral-500' : 'text-white/70'}`}>
               Groupe Scolaire
             </p>
-            <p className={`text-sm font-bold tracking-tight transition-colors ${scrolled ? 'text-neutral-900' : 'text-white'}`}>
+            <p className={`text-lg font-bold tracking-tight transition-colors ${scrolled ? 'text-neutral-900' : 'text-white'}`}>
               Targa Junior
             </p>
           </div>

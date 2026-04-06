@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { translations, type Language } from '@/lib/translations'
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react'
 
@@ -20,28 +20,33 @@ export default function HeroSlider({ lang, onNav }: HeroSliderProps) {
   const slides = t.hero.slides
   const [current, setCurrent] = useState(0)
   const [animating, setAnimating] = useState(false)
+  const animatingRef = useRef(false)
 
-  const goTo = useCallback((index: number) => {
-    if (animating) return
+  const goTo = (index: number) => {
+    if (animatingRef.current) return
+    animatingRef.current = true
     setAnimating(true)
     setTimeout(() => {
       setCurrent(index)
       setAnimating(false)
+      animatingRef.current = false
     }, 500)
-  }, [animating])
+  }
 
-  const next = useCallback(() => {
-    goTo((current + 1) % slides.length)
-  }, [current, slides.length, goTo])
+  const next = () => {
+    setCurrent((prev) => (prev + 1) % slides.length)
+  }
 
-  const prev = useCallback(() => {
-    goTo((current - 1 + slides.length) % slides.length)
-  }, [current, slides.length, goTo])
+  const prev = () => {
+    setCurrent((prev) => (prev - 1 + slides.length) % slides.length)
+  }
 
   useEffect(() => {
-    const timer = setInterval(next, 6000)
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length)
+    }, 6000)
     return () => clearInterval(timer)
-  }, [next])
+  }, [slides.length])
 
   const slide = slides[current]
 

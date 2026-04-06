@@ -2,17 +2,12 @@
 
 import { useEffect, useRef } from 'react'
 import { translations, type Language } from '@/lib/translations'
-import { BookOpen, Users, Award, Star } from 'lucide-react'
+import { BookOpen, Users, Award, Star, ArrowUpRight } from 'lucide-react'
 
 interface AboutProps { lang: Language }
 
 const iconMap = [BookOpen, Star, Users, Award]
-const colorMap = [
-  'bg-blue-50 text-blue-600 border-blue-100',
-  'bg-yellow-50 text-yellow-600 border-yellow-100',
-  'bg-green-50 text-green-600 border-green-100',
-  'bg-red-50 text-red-600 border-red-100',
-]
+
 const stats = [
   { value: '500+', label: { fr: 'Élèves', en: 'Students', ar: 'طالب' } },
   { value: '30+', label: { fr: 'Enseignants', en: 'Teachers', ar: 'معلم' } },
@@ -30,12 +25,12 @@ export default function AboutSection({ lang }: AboutProps) {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.querySelectorAll('.reveal').forEach((el, i) => {
-              setTimeout(() => el.classList.add('visible'), i * 120)
+              setTimeout(() => el.classList.add('visible'), i * 100)
             })
           }
         })
       },
-      { threshold: 0.15 }
+      { threshold: 0.1 }
     )
     if (sectionRef.current) observer.observe(sectionRef.current)
     return () => observer.disconnect()
@@ -46,78 +41,71 @@ export default function AboutSection({ lang }: AboutProps) {
       id="about"
       ref={sectionRef}
       dir={t.dir as 'ltr' | 'rtl'}
-      className="py-20 bg-gradient-to-b from-white to-slate-50 overflow-hidden"
+      className="py-24 bg-white overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className={`text-center mb-14 reveal`}>
-          <span className="inline-block px-4 py-1 rounded-full bg-cyan-50 text-[#0891b2] text-xs font-bold uppercase tracking-widest mb-3">
+        <div className={`mb-16 reveal ${lang === 'ar' ? 'text-right' : ''}`}>
+          <span className="inline-flex items-center gap-2 text-neutral-500 text-xs font-medium uppercase tracking-[0.2em] mb-4">
+            <span className="w-8 h-px bg-neutral-300" />
             {t.about.subtitle}
           </span>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 text-balance">
+          <h2 className="text-3xl md:text-5xl font-bold text-neutral-900 text-balance max-w-2xl">
             {t.about.title}
           </h2>
-          <div className="mt-4 mx-auto w-16 h-1 rounded-full bg-[#0891b2]" />
         </div>
 
         {/* Content grid */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid lg:grid-cols-2 gap-16 items-start mb-20">
           {/* Image */}
-          <div className={`relative reveal ${lang === 'ar' ? 'order-2' : 'order-1'}`}>
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-              <img
-                src="/images/school-building.jpg"
-                alt="Targa Junior school building with colorful facade and children playing in courtyard"
-                className="w-full h-auto object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-            </div>
-            {/* Floating badge */}
-            <div className="absolute -bottom-5 -right-5 bg-white rounded-2xl shadow-xl p-4 border border-gray-100 flex items-center gap-3">
-              <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/api-attachments/0wLKEzeoSj1fBaWTCmzxk-Xo3BgxZAuot9E9QOmtrbqLfYstvByk.png"
-                alt="Targa Junior logo"
-                className="h-12 w-auto"
-              />
-              <div>
-                {lang === 'ar' ? (
-                  <>
-                    <p className="text-xs font-bold text-gray-800">مجموعة مدارس</p>
-                    <p className="text-sm font-extrabold text-[#0891b2]">تاركة جينيور</p>
-                    <p className="text-xs text-gray-500">مراكش، المغرب</p>
-                  </>
-                ) : (
-                  <>
-                    <p className="text-xs font-bold text-gray-800">Groupe Scolaire</p>
-                    <p className="text-sm font-extrabold text-[#0891b2]">TARGA JUNIOR</p>
-                    <p className="text-xs text-gray-500">Marrakech, Maroc</p>
-                  </>
-                )}
+          <div className={`reveal ${lang === 'ar' ? 'order-2' : 'order-1'}`}>
+            <div className="relative">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-neutral-100">
+                <img
+                  src="/images/school-building.jpg"
+                  alt="Targa Junior school building"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              {/* Floating card */}
+              <div className="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-2xl p-5 border border-neutral-100 max-w-[200px]">
+                <div className="flex items-center gap-3 mb-3">
+                  <img
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/api-attachments/0wLKEzeoSj1fBaWTCmzxk-Xo3BgxZAuot9E9QOmtrbqLfYstvByk.png"
+                    alt="Targa Junior logo"
+                    className="h-10 w-auto"
+                  />
+                </div>
+                <p className="text-xs text-neutral-500 leading-relaxed">
+                  {lang === 'ar' ? 'مراكش، المغرب' : 'Marrakech, Maroc'}
+                </p>
               </div>
             </div>
           </div>
 
           {/* Text */}
           <div className={`${lang === 'ar' ? 'order-1' : 'order-2'}`}>
-            <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-8 reveal">
+            <p className="text-neutral-600 text-lg leading-relaxed mb-10 reveal">
               {t.about.text}
             </p>
 
-            {/* Values grid */}
-            <div className="grid grid-cols-2 gap-4">
+            {/* Values */}
+            <div className="space-y-4">
               {t.about.values.map((val, i) => {
                 const Icon = iconMap[i]
                 return (
                   <div
                     key={i}
-                    className={`reveal p-4 rounded-2xl border ${colorMap[i]} flex flex-col gap-2 hover:scale-105 transition-transform duration-200`}
+                    className={`reveal group flex items-start gap-4 p-4 rounded-xl border border-neutral-100 hover:border-neutral-200 hover:bg-neutral-50 transition-all duration-300 cursor-default ${lang === 'ar' ? 'flex-row-reverse text-right' : ''}`}
                     style={{ transitionDelay: `${i * 80}ms` }}
                   >
-                    <div className="flex items-center gap-2">
-                      <Icon size={20} />
-                      <span className="font-bold text-sm">{val.title}</span>
+                    <div className="w-10 h-10 rounded-lg bg-neutral-100 flex items-center justify-center shrink-0 group-hover:bg-neutral-900 group-hover:text-white transition-colors">
+                      <Icon size={18} />
                     </div>
-                    <p className="text-xs opacity-80 leading-snug">{val.desc}</p>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-semibold text-neutral-900 text-sm mb-1">{val.title}</h4>
+                      <p className="text-neutral-500 text-sm leading-relaxed">{val.desc}</p>
+                    </div>
                   </div>
                 )
               })}
@@ -125,16 +113,16 @@ export default function AboutSection({ lang }: AboutProps) {
           </div>
         </div>
 
-        {/* Stats row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {/* Stats */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((stat, i) => (
             <div
               key={i}
-              className={`reveal bg-white rounded-2xl shadow-md p-6 text-center border border-gray-50 hover:shadow-xl transition-shadow duration-300`}
+              className="reveal text-center p-8 rounded-2xl bg-neutral-50 border border-neutral-100 hover:border-neutral-200 transition-all duration-300"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
-              <p className="text-4xl font-extrabold text-[#d4622a] mb-1">{stat.value}</p>
-              <p className="text-sm font-medium text-gray-500">{stat.label[lang]}</p>
+              <p className="text-4xl md:text-5xl font-bold text-neutral-900 mb-2">{stat.value}</p>
+              <p className="text-sm font-medium text-neutral-500">{stat.label[lang]}</p>
             </div>
           ))}
         </div>
